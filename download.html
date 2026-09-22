@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SpyMark Defense™ — Your Downloads</title>
+<style>
+  :root { --bg:#0b0d10; --panel:#121722; --line:#232c3d; --txt:#e8edf5; --dim:#93a3b8; --accent:#00c2a8; --good:#00c2a8; --bad:#f87171; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:var(--bg); color:var(--txt); font-family:'Segoe UI',system-ui,sans-serif; min-height:100vh; }
+  .wrap { max-width:800px; margin:0 auto; padding:40px 20px 80px; }
+  .logo { font-size:22px; font-weight:700; margin-bottom:6px; }
+  .logo span { color:var(--accent); }
+  .sub { color:var(--dim); font-size:14px; margin-bottom:32px; }
+  .gate { background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:28px; margin-bottom:28px; }
+  .gate h2 { font-size:18px; margin-bottom:8px; }
+  .gate p { color:var(--dim); font-size:13px; margin-bottom:18px; }
+  input { width:100%; background:var(--bg); border:1px solid var(--line); color:var(--txt); padding:12px 14px; border-radius:8px; font-size:15px; margin-bottom:12px; }
+  .btn { background:var(--accent); color:#04211c; border:none; padding:12px 20px; border-radius:8px; font-weight:700; font-size:14px; cursor:pointer; width:100%; }
+  .btn:hover { filter:brightness(1.1); }
+  .err { color:var(--bad); font-size:13px; margin-top:10px; min-height:18px; }
+  .locked { display:none; }
+  .files { display:grid; gap:12px; }
+  .file { background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:16px 18px; display:flex; align-items:center; justify-content:space-between; gap:14px; }
+  .file h3 { font-size:15px; margin-bottom:3px; }
+  .file p { color:var(--dim); font-size:12.5px; line-height:1.45; }
+  .file .btn { width:auto; padding:9px 16px; font-size:12.5px; flex-shrink:0; }
+  .badge { display:inline-block; background:rgba(74,222,128,0.12); color:var(--good); font-size:11px; padding:2px 10px; border-radius:12px; font-weight:600; margin-bottom:6px; }
+  footer { margin-top:40px; text-align:center; color:var(--dim); font-size:12px; }
+  .start { background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:20px; margin-bottom:16px; }
+  .start h3 { font-size:16px; margin-bottom:8px; }
+  .start ol { padding-left:20px; color:var(--dim); font-size:13.5px; line-height:1.9; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="logo">◍ Spy<span>Mark</span> Defense™</div>
+  <div class="sub">The creator&rsquo;s defense against invisible AI tracking marks — your member downloads</div>
+
+  <div id="gateBox" class="gate">
+    <h2>🔐 Unlock your downloads</h2>
+    <p>Enter the email you purchased with and your personal access code (sent in your order confirmation email).</p>
+    <input id="email" type="email" placeholder="you@email.com" autocomplete="email">
+    <input id="code" type="text" placeholder="SP-XXXXX-XXXXX" autocomplete="off">
+    <button class="btn" onclick="unlock()">Unlock →</button>
+    <div class="err" id="err"></div>
+  </div>
+
+  <div id="memberArea" class="locked">
+    <div class="start">
+      <span class="badge">✅ Unlocked</span>
+      <h3>Start here — the DSSB Loop in 30 minutes</h3>
+      <ol>
+        <li><b>DETECT:</b> run <code>exiftool -a -G1 -s</code> on your last published file — see what it's telling the world</li>
+        <li><b>STRIP &amp; SEAL:</b> clean the metadata, re-export, then add your badge + Origin Record (deliverables 2 &amp; 3)</li>
+        <li><b>BROADCAST:</b> paste your disclosure block and put the origin-logged line in your bio — then charge the trust premium (deliverable 4)</li>
+      </ol>
+    <div class="files">
+      <div class="file">
+        <div><h3>📘 1. The SpyMark Protection System™</h3><p>The core guide — the DSSB model, the 7-day defense sprint, and the economics of the trust premium. Start here.</p></div>
+        <button class="btn" onclick="dl('01-spymark-protection-system.pdf', this)">Download</button>
+      </div>
+      <div class="file">
+        <div><h3>🗂️ 2. The Tracking Audit Sheet™ + Origin Log™</h3><p>Score any file 0–6 for risk, plus the fill-in origin record that becomes your proof of authorship.</p></div>
+        <button class="btn" onclick="dl('02-tracking-audit-sheet.pdf', this)">Download</button>
+      </div>
+      <div class="file">
+        <div><h3>🧰 3. The Strip &amp; Seal Toolkit™</h3><p>Paste-in disclosure blocks, the human badge spec, and exact cleaning commands for every file type.</p></div>
+        <button class="btn" onclick="dl('03-strip-seal-toolkit.pdf', this)">Download</button>
+      </div>
+      <div class="file">
+        <div><h3>💸 4. The Trust Premium Pricing Sheet™</h3><p>Three tiers, three levers, and the word-for-word script to defend a 25% premium without discounting.</p></div>
+        <button class="btn" onclick="dl('04-trust-premium-pricing.pdf', this)">Download</button>
+      </div>
+      <div class="file">
+        <div><h3>✅ 5. The Pre-Publish Checklist™</h3><p>The 8-minute gate. No file ships until it&rsquo;s four-for-four.</p></div>
+        <button class="btn" onclick="dl('05-publish-checklist.pdf', this)">Download</button>
+      </div>
+      <div class="file">
+        <div><h3>📊 6. The SpyMark Tracker™</h3><p>Weekly risk scorecard and the 30-day Trust Score to compound your record.</p></div>
+        <button class="btn" onclick="dl('06-spymark-tracker.pdf', this)">Download</button>
+      </div>
+      <div class="file">
+        <div><h3>🗣️ 7. The Provenance Scripts™</h3><p>Word-for-word answers to the 12 hardest questions — including &ldquo;isn&rsquo;t this just hiding AI?&rdquo;</p></div>
+        <button class="btn" onclick="dl('07-provenance-scripts.pdf', this)">Download</button>
+      </div>
+      <div class="file">
+        <div><h3>🚀 8. The SpyMark Playbook™</h3><p>The 30-day roadmap from habit to reputation to revenue, plus the 30-minute Starter Block.</p></div>
+        <button class="btn" onclick="dl('08-spymark-playbook.pdf', this)">Download</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>SpyMark Defense™ · practical guidance on metadata &amp; provenance · not legal advice</footer>
+</div>
+
+<script>
+function unlock() {
+  const email = document.getElementById('email').value.trim();
+  const code = document.getElementById('code').value.trim();
+  const err = document.getElementById('err');
+  if (!email || !code) { err.textContent = 'Please enter both email and access code.'; return; }
+  fetch('/api/verify', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email, code }) })
+    .then(r => r.json())
+    .then(d => {
+      if (d.ok) {
+        sessionStorage.setItem('sm_email', email);
+        sessionStorage.setItem('sm_code', code);
+        document.getElementById('gateBox').style.display = 'none';
+        document.getElementById('memberArea').classList.remove('locked');
+        document.getElementById('memberArea').style.display = 'block';
+        err.textContent = '';
+      } else {
+        err.textContent = d.error || 'Access denied. Check your code and email.';
+      }
+    })
+    .catch(() => { err.textContent = 'Network error — try again.'; });
+}
+
+function dl(file, btn) {
+  const email = sessionStorage.getItem('sm_email');
+  const code = sessionStorage.getItem('sm_code');
+  if (!email || !code) { alert('Session expired — please unlock again.'); location.reload(); return; }
+  const orig = btn.textContent;
+  btn.textContent = '⏳ …';
+  btn.disabled = true;
+  fetch('/api/download', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email, code, file }) })
+    .then(async r => {
+      if (!r.ok) { const d = await r.json().catch(() => ({})); throw new Error(d.error || 'Download failed (' + r.status + ')'); }
+      const blob = await r.blob();
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = file;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      btn.textContent = '✅ Sent';
+    })
+    .catch(e => { alert(e.message); btn.textContent = orig; })
+    .finally(() => { btn.disabled = false; setTimeout(() => { if (btn.textContent === '✅ Sent') btn.textContent = orig; }, 2500); });
+}
+
+// auto-unlock if already verified this session
+const em = sessionStorage.getItem('sm_email');
+const ec = sessionStorage.getItem('sm_code');
+if (em && ec) {
+  fetch('/api/verify', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email: em, code: ec }) })
+    .then(r => r.json())
+    .then(d => { if (d.ok) { document.getElementById('gateBox').style.display = 'none'; document.getElementById('memberArea').classList.remove('locked'); document.getElementById('memberArea').style.display = 'block'; } });
+}
+document.getElementById('code').addEventListener('keydown', (e) => { if (e.key === 'Enter') unlock(); });
+</script>
+</body>
+</html>

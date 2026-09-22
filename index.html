@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SpyMark Defense™ — Prove Your Work Is Human-Made (And Charge For It)</title>
+<meta name="description" content="The system that strips invisible AI tracking marks from your work, seals it with your own proof of origin, and lets you charge a trust premium. 8-part system, $19.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--ink:#0b0d10;--ink2:#161a20;--paper:#ffffff;--mut:#5b6472;--line:#e6e9ee;--acc:#00c2a8;--acc2:#7c5cff;--warn:#ff4d4d;--gold:#ffc247}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--paper);line-height:1.65;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+.narrow{max-width:760px;margin:0 auto;padding:0 22px}
+section{padding:74px 0;border-bottom:1px solid var(--line)}
+.eyebrow{display:inline-block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:800;color:var(--acc);background:rgba(0,194,168,.09);padding:7px 14px;border-radius:100px;margin-bottom:20px}
+h1{font-size:clamp(34px,5.6vw,62px);line-height:1.05;letter-spacing:-.03em;font-weight:850;margin-bottom:22px}
+h2{font-size:clamp(27px,4vw,42px);line-height:1.13;letter-spacing:-.022em;font-weight:820;margin-bottom:18px}
+h3{font-size:21px;font-weight:750;margin-bottom:10px;letter-spacing:-.01em}
+p{font-size:18px;color:var(--mut);margin-bottom:17px}
+p.lead{font-size:21px;color:#333b47}
+strong{color:var(--ink);font-weight:730}
+.hero{background:linear-gradient(160deg,#0b0d10 0%,#121722 52%,#0b0d10 100%);color:#fff;padding:96px 0 84px;border-bottom:none;position:relative;overflow:hidden}
+.hero:before{content:'';position:absolute;top:-240px;right:-160px;width:640px;height:640px;background:radial-gradient(circle,rgba(0,194,168,.20),transparent 66%);border-radius:50%}
+.hero:after{content:'';position:absolute;bottom:-280px;left:-180px;width:620px;height:620px;background:radial-gradient(circle,rgba(124,92,255,.17),transparent 66%);border-radius:50%}
+.hero .wrap{position:relative;z-index:2}
+.hero h1{color:#fff}
+.hero .sub{font-size:21px;color:#aeb7c6;max-width:660px;margin-bottom:32px}
+.hero .eyebrow{color:#7ef2dd;background:rgba(0,194,168,.14)}
+.cta{display:inline-block;background:var(--acc);color:#04211c;font-weight:820;font-size:19px;padding:18px 40px;border-radius:12px;text-decoration:none;box-shadow:0 12px 34px rgba(0,194,168,.34);transition:.18s}
+.cta:hover{transform:translateY(-2px);box-shadow:0 18px 44px rgba(0,194,168,.44)}
+.cta.big{font-size:21px;padding:21px 52px}
+.cta-note{font-size:14px;color:#8b95a5;margin-top:16px}
+.trustbar{display:flex;gap:26px;flex-wrap:wrap;margin-top:36px;font-size:14px;color:#8b95a5}
+.trustbar span:before{content:'✓ ';color:var(--acc);font-weight:900}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(272px,1fr));gap:22px;margin-top:38px}
+.card{background:#fafbfc;border:1px solid var(--line);border-radius:16px;padding:28px}
+.card h3{font-size:18px}
+.card p{font-size:16px;margin-bottom:0}
+.pain{background:#fff5f5;border-left:4px solid var(--warn);padding:22px 26px;border-radius:0 12px 12px 0;margin:24px 0}
+.pain p{margin:0;color:#5c2222;font-size:17px}
+.pain p b{color:#8a1717}
+.mech{background:linear-gradient(140deg,#0f1420,#171d2b);color:#fff;border-radius:20px;padding:46px 40px;margin-top:36px;border:1px solid #232c3d}
+.mech h3{color:#fff}
+.mech p{color:#a8b3c6}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(218px,1fr));gap:18px;margin-top:30px}
+.step{background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:24px}
+.step .n{font-size:12px;font-weight:850;letter-spacing:.1em;color:var(--acc);margin-bottom:9px}
+.step h4{font-size:17px;color:#fff;margin-bottom:7px}
+.step p{font-size:14px;color:#9aa5b8;margin:0}
+.stack{list-style:none;margin-top:32px}
+.stack li{display:flex;gap:16px;padding:19px 0;border-bottom:1px solid var(--line);align-items:flex-start}
+.stack li:before{content:'◍';color:var(--acc);font-size:19px;font-weight:900;flex-shrink:0;line-height:1.4}
+.stack b{display:block;color:var(--ink);font-weight:760;font-size:17px;margin-bottom:3px}
+.stack span{font-size:15px;color:var(--mut)}
+.val{background:#f7f9fa;border-radius:16px;padding:30px 34px;margin-top:30px}
+.valrow{display:flex;justify-content:space-between;padding:11px 0;border-bottom:1px dashed #d8dde3;font-size:16px}
+.valrow.tot{border-bottom:none;font-size:21px;font-weight:850;padding-top:20px;color:var(--ink)}
+.price{text-align:center;padding:20px 0 4px}
+.price .now{font-size:74px;font-weight:880;letter-spacing:-.045em;color:var(--ink);line-height:1}
+.price .was{font-size:22px;color:#98a1ad;text-decoration:line-through;margin-right:12px}
+.price .note{color:var(--mut);font-size:16px;margin-top:10px}
+.guar{background:#f0fdfa;border:1px solid #b8f0e5;border-radius:16px;padding:32px;text-align:center;margin-top:34px}
+.guar h3{color:#06695a}
+.guar p{color:#3f6b64;margin:0;font-size:16px}
+.host .faq{border-bottom:1px solid var(--line);padding:20px 0}
+.host .faq:last-child{border-bottom:none}
+.host summary{font-weight:730;font-size:18px;cursor:pointer;list-style:none;color:var(--ink);display:flex;justify-content:space-between;gap:16px}
+.host summary::-webkit-details-marker{display:none}
+.host summary:after{content:'+';color:var(--acc);font-weight:800;font-size:23px;line-height:1}
+.host details[open] summary:after{content:'−'}
+.host details p{margin-top:12px;font-size:16px}
+.final{background:linear-gradient(160deg,#0b0d10,#141a26);color:#fff;text-align:center;padding:90px 0;border-bottom:none}
+.final h2{color:#fff;margin-bottom:20px}
+.final p{color:#a8b3c6;max-width:620px;margin:0 auto 30px}
+footer{background:#080a0d;color:#6f7885;padding:38px 0;font-size:14px;text-align:center}
+footer a{color:#9aa5b3;text-decoration:none}
+.flash{background:var(--gold);color:#241a00;text-align:center;padding:11px;font-weight:780;font-size:14px;letter-spacing:.01em}
+@media(max-width:640px){section{padding:52px 0}.hero{padding:70px 0 58px}.mech{padding:32px 24px}}
+</style>
+</head>
+<body>
+
+<div class="flash">⚠️ INVISIBLE AI MARKS ARE BEING WRITTEN INTO YOUR FILES RIGHT NOW — HERE'S THE FIX</div>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">For creators · freelancers · consultants</span>
+    <h1>Your files are leaking who you are — and pricing you down to a machine.</h1>
+    <p class="sub">The SpyMark Defense™ System strips the invisible AI tracking marks from your work, seals it with your own proof of origin, and gives you the words to <strong style="color:#7ef2dd">charge a trust premium</strong> for the difference.</p>
+    <a class="cta big" href="#buy">Get The System — $19 →</a>
+    <div class="cta-note">8-part digital system · instant access · 60-day guarantee</div>
+    <div class="trustbar">
+      <span>Detect invisible marks</span>
+      <span>Strip what tracks you</span>
+      <span>Seal your own proof</span>
+      <span>Charge the premium</span>
+    </div>
+  </div>
+</header>
+
+<!-- PROBLEM -->
+<section>
+  <div class="narrow">
+    <span class="eyebrow">The shift nobody warned you about</span>
+    <h2>August 2026 changed what it means to publish.</h2>
+    <p class="lead">In one month, the ground moved under every creator online:</p>
+    <div class="pain"><p><b>Anthropic turned on invisible text watermarks</b> in Claude's output — a statistical signature that steers word choices into a detectable pattern. You can't see it. Your clients can't either.</p></div>
+    <div class="pain"><p><b>Microsoft's Paint &amp; Photos watermarks were linked to user IDs</b> by researchers. Google's SynthID can hide a <b>136-bit payload</b> inside a single 512×512 image — enough room for a database ID that maps back to you.</p></div>
+    <div class="pain"><p><b>Watermark-removal apps turned out to be scams and malware.</b> The market got desperate — and scammy — almost overnight.</p></div>
+    <p><strong>The result:</strong> buyers can no longer tell human work from machine work, so they <strong>discount everyone</strong>. Honest creators get priced at machine level — not because their work is worse, but because they can't <em>prove</em> it isn't.</p>
+    <p>That's not a tooling problem. It's a <strong>proof</strong> problem. And proof is something you can build in a week.</p>
+  </div>
+</section>
+
+<!-- MECHANISM -->
+<section style="background:#fafbfc">
+  <div class="narrow">
+    <span class="eyebrow">The mechanism</span>
+    <h2>The SpyMark Model™ — four moves, one loop.</h2>
+    <p class="lead">This is the entire system. Learn the four moves once and you'll never publish exposed again.</p>
+    <div class="mech">
+      <h3>DSSB™ — Detect · Strip · Seal · Broadcast</h3>
+      <p>Most people skip straight to "removing" the mark — and fail, because they remove a signal and add nothing back. The DSSB Loop closes all four gaps.</p>
+      <div class="steps">
+        <div class="step"><div class="n">MOVE 01</div><h4>Detect</h4><p>Find every mark in your file: metadata, provenance signatures, and statistical fingerprints. You can't fix what you can't see.</p></div>
+        <div class="step"><div class="n">MOVE 02</div><h4>Strip</h4><p>Remove the tracking identifiers that don't belong to you — cleanly, ethically, and without lying about your tools.</p></div>
+        <div class="step"><div class="n">MOVE 03</div><h4>Seal</h4><p>Fill the gap with <em>your own</em> verifiable proof: a dated origin record, your badge, your disclosure.</p></div>
+        <div class="step"><div class="n">MOVE 04</div><h4>Broadcast</h4><p>Say it out loud — on the work, in your bio, in your quote. Turn proof into the premium you charge.</p></div>
+      </div>
+    </div>
+    <p style="margin-top:28px">Detect, strip, and seal any file in <strong>under 60 seconds</strong>. Then charge for the trust that proves.</p>
+  </div>
+</section>
+
+<!-- WHAT YOU GET -->
+<section>
+  <div class="narrow">
+    <span class="eyebrow">What's inside</span>
+    <h2>The complete 8-part SpyMark Defense™ System.</h2>
+    <p class="lead">Not a thin ebook. A full working system you can run tonight.</p>
+    <ul class="stack">
+      <li><div><b>01 · The SpyMark Protection System™</b><span>The core guide: the DSSB model, the 7-day defense sprint, and the economics of the trust premium.</span></div></li>
+      <li><div><b>02 · The Tracking Audit Sheet™ + Origin Log™</b><span>Score any file 0–6 for risk, plus the fill-in origin record that becomes your proof of authorship.</span></div></li>
+      <li><div><b>03 · The Strip &amp; Seal Toolkit™</b><span>Paste-in disclosure blocks, the human badge spec, and exact cleaning commands per file type.</span></div></li>
+      <li><div><b>04 · The Trust Premium Pricing Sheet™</b><span>Three tiers, three levers, and the word-for-word script to defend a 25% premium without discounting.</span></div></li>
+      <li><div><b>05 · The Pre-Publish Checklist™</b><span>The 8-minute gate. No file ships until it's four-for-four.</span></div></li>
+      <li><div><b>06 · The SpyMark Tracker™</b><span>Weekly risk scorecard and the 30-day Trust Score to compound your record.</span></div></li>
+      <li><div><b>07 · The Provenance Scripts™</b><span>Word-for-word answers to the 12 hardest questions you'll be asked — including "isn't this just hiding AI?"</span></div></li>
+      <li><div><b>08 · The SpyMark Playbook™</b><span>The 30-day roadmap from habit → reputation → revenue, plus the 30-minute Starter Block.</span></div></li>
+    </ul>
+  </div>
+</section>
+
+<!-- VALUE + PRICE -->
+<section style="background:#fafbfc">
+  <div class="narrow">
+    <span class="eyebrow">The math</span>
+    <h2>One project pays for this hundreds of times over.</h2>
+    <div class="val">
+      <div class="valrow"><span>The 8-part SpyMark Defense™ System</span><span>$79</span></div>
+      <div class="valrow"><span>The Origin Log™ (reusable in every contract)</span><span>$49</span></div>
+      <div class="valrow"><span>The Trust Premium Pricing Scripts</span><span>$39</span></div>
+      <div class="valrow"><span>The Pre-Publish Gate + Tracker</span><span>$29</span></div>
+      <div class="valrow tot"><span>Total real value</span><span>$196</span></div>
+    </div>
+    <p style="margin-top:24px">A freelancer who raises one $4,000 project by just 15% banks <strong>$600</strong> from a single sentence: <em>"this comes with an origin record."</em></p>
+    <div class="price" id="buy">
+      <div><span class="was">$196</span><span class="now">$19</span></div>
+      <div class="note">Founder price · one-time · instant download access</div>
+    </div>
+    <div style="text-align:center;margin-top:26px">
+      <a class="cta big" href="{{PAYLINK}}" id="buybtn">Get Instant Access — $19 →</a>
+      <div class="cta-note">Secure checkout via Stripe · card &amp; wallet accepted</div>
+    </div>
+    <div class="guar">
+      <h3>60-Day "Quiet Mind" Guarantee</h3>
+      <p>Run the system. If your work isn't provably yours and you don't feel the difference, email us within 60 days for a full refund. Keep everything either way.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="host">
+  <div class="narrow">
+    <span class="eyebrow">Fair questions</span>
+    <h2>Straight answers.</h2>
+    <details class="faq"><summary>Doesn't this just help people hide AI use?</summary><p>No — and it's the most important line in the system. Stripping removes <strong>non-consensual tracking identifiers</strong> from your own output. Disclosing your tools is a separate, required act — and the system tells you to do it. Strip tracking; disclose tools. Opposite things.</p></details>
+    <details class="faq"><summary>Can you really remove Claude's text watermark?</summary><p>Not with any guarantee — and anyone promising a 100% "remover" is lying or selling malware (that's already happened at scale). What you <em>can</em> do is rewrite the text in your own voice until it's genuinely yours, then seal it with proof of authorship. That's the honest defense, and it's what this system teaches.</p></details>
+    <details class="faq"><summary>Is this technical? Do I need to code?</summary><p>No. The core loop is four moves and a checklist. There are copy-paste commands for images and audio, but you can run the whole system without touching a terminal.</p></details>
+    <details class="faq"><summary>How fast do I get it?</summary><p>Instantly. At checkout you get a personal access code and a download link for all 8 deliverables as PDFs.</p></details>
+    <details class="faq"><summary>Is it worth $19 if I'm not a freelancer?</summary><p>If you publish anything — posts, photos, newsletters, videos — it protects you from leaking identities you didn't mean to share and from being accused of AI slop with no defense. The pricing half is a bonus if you charge for work.</p></details>
+  </div>
+</section>
+
+<!-- FINAL -->
+<section class="final">
+  <div class="narrow">
+    <h2>Prove your work is human-made. Then charge for it.</h2>
+    <p>The market just learned it can't tell humans from machines — and it resents it. In that resentment is your opportunity. Be the creator who can be verified.</p>
+    <a class="cta big" href="{{PAYLINK}}">Get The SpyMark Defense™ System — $19 →</a>
+    <div class="cta-note" style="margin-top:18px">Detect. Strip. Seal. Broadcast.</div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p style="color:#6f7885">SpyMark Defense™ · The creator's defense against invisible AI tracking marks.</p>
+    <p style="color:#4c545f;font-size:13px;margin-top:8px">© 2026 SpyMark Defense. All rights reserved. · <a href="/thank-you.html">Order confirmation</a> · <a href="/download.html">Access your downloads</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
